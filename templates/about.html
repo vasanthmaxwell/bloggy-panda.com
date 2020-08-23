@@ -1,65 +1,61 @@
-{% extends 'base.html' %}
-{% block title %}Team{% endblock %}
-
-{% block content %}
-{% load static %}
-    <section class="hero-wrap hero-wrap-2 js-fullheight" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-                <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <h1 class="mb-3 bread">Team</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home'  %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Team <i class="ion-ios-arrow-forward"></i></span></p>
-                </div>
+{% extends 'base.html' %} {% block title %}Team{% endblock %} {% block content %} {% load static %}
+<section class="hero-wrap hero-wrap-2 js-fullheight" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate pb-5 text-center">
+                <h1 class="mb-3 bread">Team</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home'  %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Team <i class="ion-ios-arrow-forward"></i></span></p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-   
-    <section class="ftco-section testimony-section">
-        <div class="container">
 
-            <div class="row ftco-animate">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel ftco-owl">
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="text">
-                                    <p class="mb-4">He is Ashutosh Patole, handling Cloud Computing services and SEO for Bloggypanda. Apart from this, he is a Frontend developer, mobile application developer, Linux administrator and content writer. His interest in blogging made him come up with this platform to share his knowledge.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url({% static 'images/ashutosh.jpg' %})"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Ashutosh Patole</p>
-                                            <span class="position">Frontend Developer and content writer</span>
-                                        </div>
+<section class="ftco-section testimony-section">
+    <div class="container">
+
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel ftco-owl">
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="mb-4">He is Ashutosh Patole, handling Cloud Computing services and SEO for Bloggypanda. Apart from this, he is a Frontend developer, mobile application developer, Linux administrator and content writer. His interest in blogging
+                                    made him come up with this platform to share his knowledge.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url({% static 'images/ashutosh.jpg' %})"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Ashutosh Patole</p>
+                                        <span class="position">Frontend Developer and content writer</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="text">
-                                    <p class="mb-4">He is Vasanth. He is a full-stack developer with an expert knowledge in Cloud Computing. He is an enthusiastic and passionate cricketer. He loves travelling and programming</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url({% static 'images/vasanth.jpeg' %})"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Vasanth</p>
-                                            <span class="position">Full stack Developer</span>
-                                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="mb-4">He is Vasanth. He is a full-stack developer with an expert knowledge in Cloud Computing. He is an enthusiastic and passionate cricketer. He loves travelling and programming</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url({% static 'images/vasanth.jpeg' %})"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Vasanth</p>
+                                        <span class="position">Full stack Developer</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="text">
-                                    <p class="mb-4">She is Aslin Savio alias Lia. She is currently pursuing her engineering degreen in an esteemed institution. She is an avid reader and an amateur writer. Her reading habits inspired her to write poems, novel and blogs.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url({% static 'images/bloguser.jpeg' %})"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Aslin Savio</p>
-                                            <span class="position">Content Writer</span>
-                                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="mb-4">She is Aslin Savio alias Lia. She is currently pursuing her engineering degreen in an esteemed institution. She is an avid reader and an amateur writer. Her reading habits inspired her to write poems, novel and blogs.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url({% static 'images/bloguser.jpeg' %})"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Aslin Savio</p>
+                                        <span class="position">Content Writer</span>
                                     </div>
                                 </div>
                             </div>
@@ -68,13 +64,11 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+    </div>
+</section>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 
 {% endblock %}
-   
-
-
