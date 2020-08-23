@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+{% load static %}
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate pb-5 text-center">
+                    <h1 class="mb-3 bread" style="font-size: 80px;">Contact us</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section contact-section">
+        <div class="container">
+            <div class="row d-flex mb-5 contact-info">
+                <div class="col-md-12 mb-4">
+                    <h2 class="h3">Contact Information</h2>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-md-3">
+                    <p><span>Address:</span> Kelambakkam, Chennai , India </p>
+                </div>
+                <div class="col-md-3">
+                    <p><span>Phone:</span> <a href="tel://8637447210">+91 8637447210 / +91 8610550602</a></p>
+                </div>
+                <div class="col-md-3">
+                    <p><span>Email:</span> <a href="mailto:bit0byte8@gmail.com">bit0byte8@gmail.com</a></p>
+                </div>
+                <div class="col-md-3">
+                    <p><span>Website:</span> <a href="website:www.bloggypanda.com">bloggypanda.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+{% endblock %}

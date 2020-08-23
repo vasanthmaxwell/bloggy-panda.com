@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}Bloggypanda{% endblock %}
+{% block content %}
+{% load static %}
+    <div class="hero-wrap js-fullheight" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+                <div class="col-md-12 ftco-animate">
+                    <h2 class="subheading">Hello! Welcome to</h2>
+                    <h1 class="mb-4 mb-md-0" style="font-size: 50px;">Bloggypanda</h1>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="text">
+                                <p>We are a group of people who believes in the power of words. As we are soon to be engineering gradutes, we thought of coming up with this new platform to share our thoughts. So, here we are with our wide range of blogs covering both technical and non-technical contents. We entertain; we educate. Join hands with us to learn and know more!</p>
+                                <div class="mouse">
+                                    <a href="#" class="mouse-icon">
+                                        <div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% for post in blog %}
+                    <div class="case">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-xl-8 d-flex">
+                                <a href="{{post.get_absolute_url}}" class="img w-100 mb-3 mb-md-0" style="background-image: url({{post.image.url}});background-size:contain;"></a>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4 d-flex">
+                                <div class="text w-100 pl-md-3">
+                                    {% for cat in post.category.all %}
+                                    <span class="subheading">{{cat}}</span>
+                                    {% endfor %}
+                                    <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
+                                    
+                                    <div class="meta">
+                                        <p class="mb-0"><a href="#">{{post.publishdate}}</a> | <a href="#">{{post.mintoread}} min read</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+
+
+    <!-- circular progress indicator -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+{% endblock %}
+    
+
