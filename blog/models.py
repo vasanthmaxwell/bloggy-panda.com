@@ -17,6 +17,7 @@ class Tags(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
+    meta = models.CharField(max_length=200)
     category = models.ManyToManyField(Categories)
     overview = models.TextField()
     content = HTMLField()

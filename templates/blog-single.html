@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}{{post.title}}{% endblock %}
+{% block meta %}{{post.meta}}{% endblock %}
 {% block content %}
 {% load static %}
 <style>
@@ -11,7 +12,7 @@
 	height:auto;
     }
     .post-body{
-        color:#000000
+        color:#000000;
     }
     .autrimg{
 	height:150px;
@@ -45,7 +46,7 @@
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate pb-5 text-center">
                     {% for cat in post.category.all %}
-                    <h1 class="mb-3 bread">{{cat}}</h1>
+                    <h2 class="mb-3 bread" style="color:#ffffff;font-size:60px">{{cat}}</h2>
                     {% endfor %}
                     <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="{% url 'articles' %}">Blog <i class="ion-ios-arrow-forward"></i></a></span> <span>{{post.authorname}} <i class="ion-ios-arrow-forward"></i></span></p>
                 </div>
