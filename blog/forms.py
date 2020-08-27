@@ -1,7 +1,7 @@
 
 from django import forms
 from tinymce import TinyMCE
-from .models import Blog
+from .models import Blog,Comments
 
 
 class TinyMCEWidget(TinyMCE):
@@ -18,5 +18,13 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Blog
-        fields = '__all__
-        
+        fields = '__all__'
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comments
+        fields = ('name','comment')
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class':'form-control','id':'name'}),
+            'comment': forms.Textarea(attrs={'class':'form-control','id':'message','cols':30,'rows':10})
+        }

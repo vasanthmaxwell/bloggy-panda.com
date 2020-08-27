@@ -15,6 +15,7 @@ class Tags(models.Model):
         return self.title
 
 
+
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     meta = models.CharField(max_length=200)
@@ -38,3 +39,14 @@ class Blog(models.Model):
             'id':self.id
         })
 
+class Comments(models.Model):
+    post = models.ForeignKey(Blog,related_name="comments",on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    comment = models.TextField()
+    commenttime = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+    
+    def comcount(self):
+        return self.comment.count()

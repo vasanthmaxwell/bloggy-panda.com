@@ -1,7 +1,8 @@
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import Blog,Categories
 from urllib.parse import quote_plus
+from .forms import CommentForm
 # Create your views here.
 
 def home(request):
@@ -29,6 +30,16 @@ def contact(request):
 
 def blog(request,id):
     post = get_object_or_404(Blog,id=id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.post = post
+            obj.save()
+            return redirect('blog-full',id=id)
+    else:
+        form = CommentForm()
     share = quote_plus(post.title)
     recent = Blog.objects.order_by('-timestamp')[:3]
-    return render(request,'blog-single.html',{'post':post,'recent':recent,'share':share})
+    return render(request,'blog-single.html',{'post':post,'recent':recent,'share':share,'form':form})
+
