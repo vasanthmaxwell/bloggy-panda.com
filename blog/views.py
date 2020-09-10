@@ -28,8 +28,8 @@ def team(request):
 def contact(request):
     return render(request,'contact.html')
 
-def blog(request,id):
-    post = get_object_or_404(Blog,id=id)
+def blog(request,slug):
+    post = get_object_or_404(Blog,slug=slug)
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():

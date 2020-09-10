@@ -16,6 +16,6 @@ urlpatterns = [
     path('articles',views.articles,name='articles'),
     path('team',views.team,name='team'),
     path('contact',views.contact,name='contact'),
-    path('blog/<id>/',views.blog,name='blog-full'),
+    path('blog/<slug>/',views.blog,name='blog-full'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 ]

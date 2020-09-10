@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from tinymce import HTMLField
+from bloggy.utils import unique_slug_generator
+from django.db.models.signals import pre_save
 # Create your models here.
 
 class Categories(models.Model):
@@ -18,6 +20,7 @@ class Tags(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=250,null=True,blank=True)
     meta = models.CharField(max_length=200)
     category = models.ManyToManyField(Categories)
     overview = models.TextField()
@@ -36,8 +39,13 @@ class Blog(models.Model):
     
     def get_absolute_url(self):
         return reverse('blog-full',kwargs={
-            'id':self.id
+            'slug':self.slug
         })
+
+def slug_generator(sender,instance,*args,**kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
+pre_save.connect(slug_generator,sender=Blog)
 
 class Comments(models.Model):
     post = models.ForeignKey(Blog,related_name="comments",on_delete=models.CASCADE)
@@ -50,3 +58,4 @@ class Comments(models.Model):
     
     def comcount(self):
         return self.comment.count()
+
