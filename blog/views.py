@@ -36,7 +36,7 @@ def blog(request,slug):
             obj = form.save(commit=False)
             obj.post = post
             obj.save()
-            return redirect('blog-full',id=id)
+            return redirect('blog-full',slug=slug)
     else:
         form = CommentForm()
     share = quote_plus(post.title)
